@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# பாலகுமாரன் நூலகம் — Balakumaran Library
 
-## Getting Started
+A personal reading app dedicated to the Tamil writer Balakumaran (1946–2018).
 
-First, run the development server:
+## Run
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
+# or: npm run build && npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## What's inside
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **நூலகம் (Library)** — catalogue of 200+ works: historical epics, spiritual works, epics & puranas,
+  social novels, short stories, essays & Q&A, autobiography, poetry. Search in Tamil or English letters.
+- **அவரைப் பற்றி (About)** — timeline, awards, 23 films.
+- **Reader** — Tamil fonts (Noto Serif Tamil, Tiro Tamil, Mukta Malar, Hind Madurai, Anek Tamil, Catamaran),
+  paper / sepia / lotus / night themes, size & line-spacing, chapter list, remembers where you stopped.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Adding the books
 
-## Learn More
+His works are still under copyright, so the app ships with no book text. Add your own copies:
 
-To learn more about Next.js, take a look at the following resources:
+- On a book's page: upload a file or paste text.
+- **நூல் சேர் (Import)**: drop many files at once. They're matched to titles by file name, e.g. `udaiyar-1.epub` or `உடையார்.txt`.
+- Supported: DRM-free EPUB, TXT, Markdown, HTML. Kindle books are DRM-locked and can't be imported.
+- Lines like `அத்தியாயம் 1`, `பகுதி 2`, `# Title` become chapters.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Texts are stored only in your browser (IndexedDB). Use **என் அலமாரி → ஏற்றுமதி** to back them up or move them to another device.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Catalogue source: Tamil & English Wikipedia bibliographies. Edit `src/lib/works.ts` to add or correct titles.
